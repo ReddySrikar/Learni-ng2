@@ -6,13 +6,13 @@ import {AboutComponent} from "./components/about/about.component";
 
 const appRoutes: Routes  = [
   {
-    path: '/',
+    path: '',
     component: UserComponent
   },
   {
-    path: '/about',
+    path: 'about',
     component: AboutComponent
   }
 ]
 
-export const routing = 
+export const routing = RouterModule.forRoot(appRoutes);
