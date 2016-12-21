@@ -1,10 +1,10 @@
 //Created by Srikar on 21-12-2016.
 import { Routes, RouterModule } from '@angular/router';
 
-import {UserComponent} from "./components/about/about.component";
+import {UserComponent} from "./components/user/user.component";
 import {AboutComponent} from "./components/about/about.component";
 
-const apppRoutes: Routes  = [
+const appRoutes: Routes  = [
   {
     path: '/',
     component: UserComponent
@@ -15,3 +15,4 @@ const apppRoutes: Routes  = [
   }
 ]
 
+export const routing = 
