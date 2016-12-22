@@ -2,4 +2,27 @@
 <label><strong>User Name:</strong> {{ name }}</label> <br />
 <label><strong>User Age:</strong> {{ age }}</label> <br />
 <label><strong>User E-mail:</strong> {{ email }}</label> <br />
-<label><strong>User Address:</strong> <p>Street: {{ address.street }} City: {{ address.city }} County: {{ address.county }}</p></label>
+<label><strong>User Address:</strong> Street: {{ address.street }} City: {{ address.city }} County: {{ address.county }}</label>
+
+<form>
+  <label><h4>Enter Details to bind data:</h4></label>
+  <label><strong>Enter Name: </strong><input type="text" name="name" [(ngModel)]="name" ></label><br />
+  <label><strong>Enter Age: </strong><input type="text" name="age" [(ngModel)]="age"></label><br />
+  <label><strong>Enter E-mail: </strong><input type="text" name="email" [(ngModel)]="email" ></label><br />
+  <label><strong>Enter Street: </strong><input type="text" name="street" [(ngModel)]="address.street" ></label><br />
+  <label><strong>Enter City: </strong><input type="text" name="city" [(ngModel)]="address.city" ></label><br />
+  <label><strong>Enter County: </strong><input type="text" name="county" [(ngModel)]="address.county" ></label><br />
+</form>
+<button (click)="toggleHobbies()">{{showHobbies ? 'Hide':'Show'}} Hobbies</button>
+<div *ngIf="showHobbies">
+  <ul>
+    <li *ngFor="let hobby of hobbies; let i=index">{{ hobby }}<button (click)="delHobby(i)">DEL</button></li>
+  </ul>
+  <form (submit)="addHobby(hobby.value)">
+  <label><strong>Enter hobbies here:</strong><input type="text" name="hobbies" #hobby></label>
+  </form>
+</div>
+
+<div *ngFor="let post of postpool">
+  <label><h4>{{post.id}}. {{ post.title }}</h4> <p>{{ post.body }}</p></label>
+</div>
